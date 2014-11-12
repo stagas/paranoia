@@ -39,7 +39,7 @@ var bass_exp = Allpass(75);
 var bass_osc = Saw();
 
 export function dsp(t) {
-  t *= 2;
+  t *= 1.2;
 
   if ( (t*8)    % 1 === 0 ) lead.tune([0.1,[.2,2][t/4%2|0]][t%2|0]);
 
