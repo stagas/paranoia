@@ -71,19 +71,19 @@ export function dsp(t) {
   bass_out = lpf.cut(G).res(0.3).hpf(0.6).run(bass_out * .5);
 
   var left = 0.8 * (
-    drums.mix() * 0.3
-  + kick * 1.3
+    drums.mix() * 0.17
+  + kick * 0.6
   );
 
   var right = left;
   
-  var bass_gain = 0.5;
+  var bass_gain = 0.76;
   left += bass_out * bass_gain;
   right += bass_exp.run(bass_out * bass_gain);
 
-  var out_gain = 0.35;
+  var out_gain = 0.27;
   left += out * out_gain;
   right += out_exp.run(out * out_gain);
 
-  return [left * .8, right * .8];
+  return [left * .85, right * .85];
 }
